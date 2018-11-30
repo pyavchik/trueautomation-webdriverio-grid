@@ -21,7 +21,7 @@ Open a separate command line and navigate to the directory where is the selenium
 To run the hub, type the following command:
 
 ```bash
-java -jar selenium-server-standalone-3.13.0.jar -role hub
+java -jar selenium-server-standalone-3.141.59.jar -role hub
 ```
 
 ## Start the nodes
@@ -34,7 +34,7 @@ To run the node, use the following command:
 for UNIX operating system:
 
 ```bash
-java -Dwebdriver.chrome.driver=./drivers/chromedriver -Dwebdriver.gecko.driver=./drivers/geckodriver -jar selenium-server-standalone-3.13.0.jar -role node -nodeConfig nodeconfig.json
+java -Dwebdriver.chrome.driver=./drivers/chromedriver -Dwebdriver.gecko.driver=./drivers/geckodriver -jar selenium-server-standalone-3.141.59.jar -role node
 ```
 
 for Windows operating system:
@@ -57,19 +57,19 @@ run the default test in parallel using the commands:
 for Google Chrome:
 
 ```bash
-npm test -DsuiteFile=testng.xml -Dbrowser=CHROME
+npm test 
 ```
 
 for Mozilla Firefox:
 
 ```bash
-npm test  -DsuiteFile=testng.xml -Dbrowser=FF
+npm test 
 ```
 
 for Safari (do not forget to enable Remote Automation in the Safari Develop menu):
 
 ```bash
-npm test -DsuiteFile=testng.xml -Dbrowser=SAFARI
+npm test 
 ```
 
 Or you can run the test simultaneously in all these browsers, but for this you should have installed all of them.
