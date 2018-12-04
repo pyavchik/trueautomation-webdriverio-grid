@@ -43,8 +43,6 @@ for Windows operating system:
 java -Dwebdriver.chrome.driver=.\\drivers\\chromedriver_win.exe -Dwebdriver.gecko.driver=.\\drivers\\geckodriver_win.exe -Dwebdriver.ie.driver=.\\drivers\\IEDriverServer.exe -Dwebdriver.edge.driver=.\\drivers\\MicrosoftWebDriver.exe -jar selenium-server-standalone-3.13.0.jar -role node -nodeConfig nodeconfig.json
 ```
 
-The node is configured by the JSON file: ```nodeconfig.json```. You can view the status of hub and node by opening a browser window and navigating to: http://localhost:4444/grid/console
-
 ## Running tests
 
 Tests run in parallel in different browsers depending on the platform.
@@ -54,29 +52,8 @@ Tests run in parallel in different browsers depending on the platform.
 For Mac OS, tests can be run in the ```Google Chrome```, ```Mozilla Firefox``` and ```Safari```. You can use any of these browsers and
 run the default test in parallel using the commands:
 
-for Google Chrome:
-
-```bash
-npm test 
-```
-
-for Mozilla Firefox:
-
-```bash
-npm test 
-```
-
-for Safari (do not forget to enable Remote Automation in the Safari Develop menu):
-
-```bash
-npm test 
-```
-
-Or you can run the test simultaneously in all these browsers, but for this you should have installed all of them.
-To run the test this way, use the following command:
-
-```bash
-npm test  -DsuiteFile=testngMAC.xml
+```bashf
+OS='macos' && npm test 
 ```
 
 ### If you use some Linux distribution:
@@ -84,57 +61,17 @@ npm test  -DsuiteFile=testngMAC.xml
 For Linux, tests can be run in the ```Google Chrome``` and ```Mozilla Firefox```. You can use any of these browsers and
 run the default test in parallel using the commands:
 
-for Google Chrome:
-
 ```bash
-npm test -DsuiteFile=testng.xml -Dbrowser=CHROME
-```
-
-for Mozilla Firefox:
-
-```bash
-npm test -DsuiteFile=testng.xml -Dbrowser=FF
-```
-
-Or you can run the test simultaneously in all these browsers, but for this you should have installed all of them.
-To run the test this way, use the following command:
-
-```bash
-npm test -DsuiteFile=testngLINUX.xml
+OS='linux' && npm test 
 ```
 
 ### If you use Windows 10 OS:
 
-For Windows, tests can be run in the ```Google Chrome```, ```Mozilla Firefox```, ```Microsoft Edge``` and ```Internet Explorer 11```.
+For Windows, tests can be run in the ```Google Chrome```, ```Mozilla Firefox```, ```Microsoft Edge``` .
 You can use any of these browsers and run the default test in parallel using the commands:
 
 for Google Chrome:
 
 ```bash
-npm test  -DsuiteFile=testng.xml -Dbrowser=CHROME
-```
-
-for Mozilla Firefox:
-
-```bash
-npm test -DsuiteFile=testng.xml -Dbrowser=FF
-```
-
-for Microsoft Edge:
-
-```bash
-npm test  -DsuiteFile=testng.xml -Dbrowser=EDGE
-```
-
-for Internet Explorer 11:
-
-```bash
-npm test  -DsuiteFile=testng.xml -Dbrowser=IE
-```
-
-Or you can run the test simultaneously in all these browsers, but for this you should have installed all of them.
-To run the test this way, use the following command:
-
-```bash
-npm test -DsuiteFile=testngWIN.xml
+set OS=windows&&npm test
 ```
