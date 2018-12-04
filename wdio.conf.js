@@ -1,3 +1,51 @@
+var capabilities = [{
+    maxInstances: 1,
+    browserName: "chrome"
+}];
+
+if(process.env.OS === 'macos'){
+    capabilities = [
+        {
+            maxInstances: 1,
+            browserName: "safari"
+        },
+        {
+            maxInstances: 1,
+            browserName: "chrome"
+        },
+        {
+            maxInstances: 1,
+            browserName: "firefox"
+        }
+    ];
+} else if (process.env.OS === 'linux') {
+    capabilities = [
+        {
+            maxInstances: 1,
+            browserName: "chrome"
+        },
+        {
+            maxInstances: 1,
+            browserName: "firefox"
+        }
+    ];
+} else if (process.env.OS === 'windows') {
+    capabilities = [
+        {
+            maxInstances: 1,
+            browserName: "chrome"
+        },
+        {
+            maxInstances: 1,
+            browserName: "firefox"
+        },
+        {
+            maxInstances: 1,
+            browserName: "Microsoft Edge"
+        }
+    ];
+}
+
 exports.config = {
 
     //
@@ -38,28 +86,7 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://docs.saucelabs.com/reference/platforms-configurator
     //
-    capabilities: [{
-        // maxInstances can get overwritten per capability. So if you have an in-house Selenium
-        // grid with only 5 firefox instances available you can make sure that not more than
-        // 5 instances get started at a time.
-        maxInstances: 1,
-        //
-        browserName: 'safari'
-    },{
-        // maxInstances can get overwritten per capability. So if you have an in-house Selenium
-        // grid with only 5 firefox instances available you can make sure that not more than
-        // 5 instances get started at a time.
-        maxInstances: 1,
-        //
-        browserName: 'chrome'
-    },{
-        // maxInstances can get overwritten per capability. So if you have an in-house Selenium
-        // grid with only 5 firefox instances available you can make sure that not more than
-        // 5 instances get started at a time.
-        maxInstances: 1,
-        //
-        browserName: 'firefox'
-    }],
+    capabilities: capabilities,
     //
     // ===================
     // Test Configurations
