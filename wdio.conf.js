@@ -1,47 +1,47 @@
 var capabilities = [{
     maxInstances: 1,
-    browserName: "chrome"
+    browserName: 'chrome'
 }];
 
 if(process.env.OS === 'macos'){
     capabilities = [
         {
             maxInstances: 1,
-            browserName: "safari"
+            browserName: 'safari'
         },
         {
             maxInstances: 1,
-            browserName: "chrome"
+            browserName: 'chrome'
         },
         {
             maxInstances: 1,
-            browserName: "firefox"
+            browserName: 'firefox'
         }
     ];
 } else if (process.env.OS === 'linux') {
     capabilities = [
         {
             maxInstances: 1,
-            browserName: "chrome"
+            browserName: 'chrome'
         },
         {
             maxInstances: 1,
-            browserName: "firefox"
+            browserName: 'firefox'
         }
     ];
 } else if (process.env.OS === 'windows') {
     capabilities = [
         {
             maxInstances: 1,
-            browserName: "chrome"
+            browserName: 'chrome'
         },
         {
             maxInstances: 1,
-            browserName: "firefox"
+            browserName: 'firefox'
         },
         {
             maxInstances: 1,
-            browserName: "Microsoft Edge"
+            browserName: 'Microsoft Edge'
         }
     ];
 }
