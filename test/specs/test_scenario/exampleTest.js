@@ -1,10 +1,12 @@
 const ta = require('trueautomation-helper').ta;
 
-describe('TrueAutomation.IO page', ()=> {
-    it('should set email to email field', ()=> {
+describe('TrueAutomation.IO page WebdirverIO + TrueAutomation', () => {
+    it('Test example', () => {
+        browser.setTimeout({ 'implicit': 5000 });
+
         browser.url('https://trueautomation.io');
-        browser.click(ta('loginBtn', '.login-btn'));
-        browser.click(ta('signUpBtn', '.sign-up-container a'));
-        browser.setValue(ta('emailFld', '*[name="email"]'), 'your@gmail.com');
+        $(ta('loginBtn', 'a.login-btn')).click();
+        $(ta('signUpBtn', 'div.sign-up-container > a')).click();
+        $(ta('emailFld', "[name='email']")).setValue('your@gmail.com');
     });
 });
